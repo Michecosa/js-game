@@ -17,8 +17,8 @@ for (let i=0; i<10; i++) {
       cell.classList.add('bg-primary','text-white','fw-bold');
       if(!clickedCells.includes(currentNumber)) {
         clickedCells.push(currentNumber);
+        console.log(clickedCells);
       }
-      console.log(clickedCells);
     }
 
     row.appendChild(cell);
