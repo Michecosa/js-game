@@ -15,7 +15,9 @@ for (let i=0; i<10; i++) {
 
     cell.onclick = () => {
       cell.classList.add('bg-primary','text-white','fw-bold');
-      clickedCells.push(currentNumber)
+      if(!clickedCells.includes(currentNumber)) {
+        clickedCells.push(currentNumber);
+      }
       console.log(clickedCells);
     }
 
