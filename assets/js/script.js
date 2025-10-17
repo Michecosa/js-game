@@ -21,7 +21,18 @@ function generateBombs(min, max, totBombs) {
 
 // * Array con i numeri in cui si trovano le bombe
 const bombs = generateBombs(1, 100, 99);
-console.log(`Le bombe sono qui: ${bombs}`);
+// console.log(`Le bombe sono qui: ${bombs}`);
+
+// * Se ti piace vincere facile, togli il commento sotto e genera 99 bombe *
+/* 
+const missingNumbers = [];
+for (let i = 1; i <= 100; i++) {
+  if (!bombs.includes(i)) {
+    missingNumbers.push(i);
+  }
+}
+console.log("Numeri salvi:", missingNumbers);
+ */
 
 
 const grid = document.getElementById('grid');
@@ -58,15 +69,16 @@ for (let i=0; i<10; i++) {
         
         // Bottone per ricominciare (ricarica la pagina) +contenitore del bottone
         const button = document.createElement('button');
-        const restart = document.getElementById('container');
         
         // Assegna classi e contenuto del bottone
         button.className = 'btn btn-danger mt-3';
         button.textContent = 'Try again';
-
+        
         // Ricarica la pagina al click del bottone
         button.onclick = () => location.reload();
         
+        // Carica il bottone nel container
+        const restart = document.getElementById('container');
         restart.appendChild(button);
         
       } else {
@@ -77,12 +89,15 @@ for (let i=0; i<10; i++) {
         if(clickedCells.length === totalSafeCells) {
           setTimeout(() => alert('You won!'), 100)
           
+          // Nascondo la griglia per evitare casi di errore
           grid.classList.add('d-none')
 
+          // Messaggio da mostrare in pagina
           const msg = document.createElement('div');
           msg.className = 'fw-bold fs-4 text-success';
           msg.textContent = 'Hai vinto! (non so come)';
 
+          // Carica il messaggio nel container
           const container = document.getElementById('container');
           container.appendChild(msg);
         }
