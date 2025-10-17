@@ -19,6 +19,7 @@ function generateBombs(min, max, totBombs) {
   return bombs;
 }
 
+// * Array con i numeri in cui si trovano le bombe
 const bombs = generateBombs(1, 100, 16);
 console.log(bombs);
 
@@ -26,6 +27,7 @@ console.log(bombs);
 const grid = document.getElementById('grid');
 let counter = 1;
 
+// * Array con i numeri selezionati dall'utente
 const clickedCells = [];
 for (let i=0; i<10; i++) {
   const row = document.createElement('div');
