@@ -20,11 +20,11 @@ function generateBombs(min, max, totBombs) {
 }
 
 // * Array con i numeri in cui si trovano le bombe
-const bombs = generateBombs(1, 100, 99);
+const bombs = generateBombs(1, 100, 16);
 // console.log(`Le bombe sono qui: ${bombs}`);
 
-// * Se ti piace vincere facile, togli il commento sotto e genera 99 bombe *
-/* 
+// * Se ti piace vincere facile, genera 99 bombe (linea 23)*
+
 const missingNumbers = [];
 for (let i = 1; i <= 100; i++) {
   if (!bombs.includes(i)) {
@@ -32,7 +32,7 @@ for (let i = 1; i <= 100; i++) {
   }
 }
 console.log("Numeri salvi:", missingNumbers);
- */
+
 
 
 const grid = document.getElementById('grid');
@@ -95,7 +95,7 @@ for (let i=0; i<10; i++) {
           // Messaggio da mostrare in pagina
           const msg = document.createElement('div');
           msg.className = 'fw-bold fs-4 text-success';
-          msg.textContent = 'Hai vinto! (non so come)';
+          msg.textContent = 'Hai vinto!';
 
           // Carica il messaggio nel container
           const container = document.getElementById('container');
