@@ -1,3 +1,9 @@
+// Funzione per generare numeri (interi) casuali in un dato range
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+
 const grid = document.getElementById('grid');
 let counter = 1;
 
@@ -14,7 +20,7 @@ for (let i=0; i<10; i++) {
     const currentNumber = counter;
 
     cell.onclick = () => {
-      cell.classList.add('bg-primary','text-white','fw-bold');
+      cell.classList.add('bg-primary','text-white','fw-bold','rounded','shadow','border');
       if(!clickedCells.includes(currentNumber)) {
         clickedCells.push(currentNumber);
         console.log(clickedCells);
