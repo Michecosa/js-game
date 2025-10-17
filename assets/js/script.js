@@ -20,7 +20,7 @@ function generateBombs(min, max, totBombs) {
 }
 
 // * Array con i numeri in cui si trovano le bombe
-const bombs = generateBombs(1, 100, 16);
+const bombs = generateBombs(1, 100, 99);
 console.log(`Le bombe sono qui: ${bombs}`);
 
 
@@ -55,27 +55,36 @@ for (let i=0; i<10; i++) {
         grid.classList.add('d-none')
         
         setTimeout(() => alert('Game Over! Better luck next time'), 100);
-
+        
         // Bottone per ricominciare (ricarica la pagina) +contenitore del bottone
         const button = document.createElement('button');
-        const restart = document.getElementById('restart');
-
+        const restart = document.getElementById('container');
+        
         // Assegna classi e contenuto del bottone
         button.className = 'btn btn-danger mt-3';
         button.textContent = 'Try again';
 
         // Ricarica la pagina al click del bottone
         button.onclick = () => location.reload();
-
+        
         restart.appendChild(button);
-
+        
       } else {
         cell.classList.add('bg-primary', 'text-white', 'fw-bold', 'rounded', 'shadow', 'border');
-
+        
         //Caso vittoria
         const totalSafeCells = 100 - bombs.length;
         if(clickedCells.length === totalSafeCells) {
           setTimeout(() => alert('You won!'), 100)
+          
+          grid.classList.add('d-none')
+
+          const msg = document.createElement('div');
+          msg.className = 'fw-bold fs-4 text-success';
+          msg.textContent = 'Hai vinto! (non so come)';
+
+          const container = document.getElementById('container');
+          container.appendChild(msg);
         }
       }
     };
