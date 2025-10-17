@@ -23,7 +23,7 @@ function generateBombs(min, max, totBombs) {
 const bombs = generateBombs(1, 100, 16);
 // console.log(`Le bombe sono qui: ${bombs}`);
 
-// * Se ti piace vincere facile, genera 99 bombe (linea 23)*
+// * Se ti piace vincere facile, genera 99 bombe (linea 23) e guarda in console*
 
 const missingNumbers = [];
 for (let i = 1; i <= 100; i++) {
