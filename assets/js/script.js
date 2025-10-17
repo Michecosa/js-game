@@ -3,6 +3,25 @@ function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
+function generateBombs(min, max, totBombs) {
+  const bombs = [];
+
+  for (let i = 0; i < totBombs; i++) {
+    let newBomb = getRndInteger(min, max);
+
+    if (bombs.includes(newBomb)) {
+      i--;
+    } else {
+      bombs.push(newBomb);
+    }
+  }
+
+  return bombs;
+}
+
+const bombs = generateBombs(1, 100, 16);
+console.log(bombs);
+
 
 const grid = document.getElementById('grid');
 let counter = 1;
