@@ -21,7 +21,7 @@ function generateBombs(min, max, totBombs) {
 
 // * Array con i numeri in cui si trovano le bombe
 const bombs = generateBombs(1, 100, 16);
-// console.log(`Le bombe sono qui: ${bombs}`);
+console.log(`Le bombe sono qui: ${bombs}`);
 
 // * Se ti piace vincere facile, genera 99 bombe (linea 23) e guarda in console*
 
@@ -42,10 +42,12 @@ let counter = 1;
 const clickedCells = [];
 let gameOver = false;
 for (let i=0; i<10; i++) {
+  // Genero le righe
   const row = document.createElement('div');
   row.className = 'd-flex';
 
   for (let j=0; j<10; j++) {
+    // Genero le colonne per ogni riga (e quindi le celle)
     const cell = document.createElement('div');
     cell.className = 'grid-cell';
     cell.textContent = counter;
