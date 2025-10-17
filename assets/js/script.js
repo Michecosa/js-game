@@ -48,9 +48,18 @@ for (let i=0; i<10; i++) {
       if (bombs.includes(currentNumber)) {
         cell.classList.add('bg-danger', 'text-white', 'fw-bold', 'rounded', 'shadow', 'border');
         cell.innerHTML = '<i class="bi bi-emoji-tear"></i>';
-        alert('Hai cliccato una bomba!');
+        
+        // Caso sconfitta
+        setTimeout(() => alert('Game Over! Better luck next time'), 100);
+
       } else {
         cell.classList.add('bg-primary', 'text-white', 'fw-bold', 'rounded', 'shadow', 'border');
+
+        //Caso vittoria
+        const totalSafeCells = 100 - bombs.length;
+        if(clickedCells.length === totalSafeCells) {
+          setTimeout(() => alert('You won!'), 100)
+        }
       }
     };
 
