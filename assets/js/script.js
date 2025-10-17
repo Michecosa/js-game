@@ -53,17 +53,22 @@ for (let i=0; i<10; i++) {
         // Caso sconfitta
         gameOver = true;
         grid.classList.add('d-none')
+        
+        setTimeout(() => alert('Game Over! Better luck next time'), 100);
 
-        // Bottone per ricominciare (ricarica la pagina)
+        // Bottone per ricominciare (ricarica la pagina) +contenitore del bottone
         const button = document.createElement('button');
         const restart = document.getElementById('restart');
+
+        // Assegna classi e contenuto del bottone
         button.className = 'btn btn-danger mt-3';
         button.textContent = 'Try again';
+
+        // Ricarica la pagina al click del bottone
         button.onclick = () => location.reload();
 
         restart.appendChild(button);
 
-        setTimeout(() => alert('Game Over! Better luck next time'), 100);
       } else {
         cell.classList.add('bg-primary', 'text-white', 'fw-bold', 'rounded', 'shadow', 'border');
 
