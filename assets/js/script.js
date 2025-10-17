@@ -21,7 +21,7 @@ function generateBombs(min, max, totBombs) {
 
 // * Array con i numeri in cui si trovano le bombe
 const bombs = generateBombs(1, 100, 16);
-console.log(bombs);
+console.log(`Le bombe sono qui: ${bombs}`);
 
 
 const grid = document.getElementById('grid');
@@ -41,12 +41,19 @@ for (let i=0; i<10; i++) {
     const currentNumber = counter;
 
     cell.onclick = () => {
-      cell.classList.add('bg-primary','text-white','fw-bold','rounded','shadow','border');
-      if(!clickedCells.includes(currentNumber)) {
-        clickedCells.push(currentNumber);
-        console.log(clickedCells);
+      if (clickedCells.includes(currentNumber)) return; 
+
+      clickedCells.push(currentNumber);
+
+      if (bombs.includes(currentNumber)) {
+        cell.classList.add('bg-danger', 'text-white', 'fw-bold', 'rounded', 'shadow', 'border');
+        cell.innerHTML = '<i class="bi bi-emoji-tear"></i>';
+        alert('Hai cliccato una bomba!');
+      } else {
+        cell.classList.add('bg-primary', 'text-white', 'fw-bold', 'rounded', 'shadow', 'border');
       }
-    }
+    };
+
 
     row.appendChild(cell);
     counter++;
