@@ -29,6 +29,7 @@ let counter = 1;
 
 // * Array con i numeri selezionati dall'utente
 const clickedCells = [];
+let gameOver = false;
 for (let i=0; i<10; i++) {
   const row = document.createElement('div');
   row.className = 'd-flex';
@@ -41,7 +42,7 @@ for (let i=0; i<10; i++) {
     const currentNumber = counter;
 
     cell.onclick = () => {
-      if (clickedCells.includes(currentNumber)) return; 
+      if (gameOver || clickedCells.includes(currentNumber)) return; 
 
       clickedCells.push(currentNumber);
 
@@ -50,8 +51,19 @@ for (let i=0; i<10; i++) {
         cell.innerHTML = '<i class="bi bi-emoji-tear"></i>';
         
         // Caso sconfitta
-        setTimeout(() => alert('Game Over! Better luck next time'), 100);
+        gameOver = true;
+        grid.classList.add('d-none')
 
+        // Bottone per ricominciare (ricarica la pagina)
+        const button = document.createElement('button');
+        const restart = document.getElementById('restart');
+        button.className = 'btn btn-danger mt-3';
+        button.textContent = 'Try again';
+        button.onclick = () => location.reload();
+
+        restart.appendChild(button);
+
+        setTimeout(() => alert('Game Over! Better luck next time'), 100);
       } else {
         cell.classList.add('bg-primary', 'text-white', 'fw-bold', 'rounded', 'shadow', 'border');
 
@@ -62,7 +74,6 @@ for (let i=0; i<10; i++) {
         }
       }
     };
-
 
     row.appendChild(cell);
     counter++;
