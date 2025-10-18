@@ -20,7 +20,7 @@ function generateBombs(min, max, totBombs) {
 }
 
 // * Array con i numeri in cui si trovano le bombe
-const bombs = generateBombs(1, 100, 99);
+const bombs = generateBombs(1, 100, 1);
 console.log(`Le bombe sono qui: ${bombs}`);
 
 // * Se ti piace vincere facile, genera 99 bombe (linea 23) e guarda in console*
@@ -82,7 +82,20 @@ for (let i=0; i<10; i++) {
         
         // Aggiungi visualizzazione del punteggio fatto (che è uguale al numero di caselle cliccate che non erano bombe)
         const msg = document.createElement('h3');
-        msg.textContent = `Hai fatto ${clickedCells.length -1} punto/i!` // -1 per evitare di contare la cella con la bomba
+
+        if (clickedCells.length -1 === 0) {
+          msg.textContent = `Hai cliccato come un vero esploratore… cieco`;
+        } else if(clickedCells.length -1 === 1) {
+          msg.textContent = `Un punto. Almeno non è zero. Baby steps.`;
+        } else if (clickedCells.length -1 <= 10) {
+          msg.textContent = `${clickedCells.length - 1}pt : tecnicamente non è un disastro`;
+        } else if (clickedCells.length -1 <= 30) {
+          msg.textContent = `${clickedCells.length - 1}pt : hai il tocco giusto: esplosivo ma preciso`;
+        } else if (clickedCells.length -1 <= 60) {
+          msg.textContent = `${clickedCells.length - 1}pt : le bombe iniziano ad avere paura`;
+        } else if (clickedCells.length -1 <= 83) {
+          msg.textContent = `${clickedCells.length - 1}pt : hai sfiorato la gloria!`;
+        }
         
         // Carica il bottone e il messaggio nel container
         const restart = document.getElementById('container');
