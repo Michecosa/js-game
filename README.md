@@ -3,6 +3,7 @@
 **Descrizione**
 
 Piccolo gioco a griglia stile “campo minato” (semplificato). L'utente genera una griglia quadrata e clicca le celle. Alcune celle contengono bombe: se le clicchi perdi; altrimenti continui a giocare fino a scoprire tutte le celle sicure.
+🌐 [Prova a giocare!](https://michecosa.github.io/js-game/)
 
 <br>
 <br>
