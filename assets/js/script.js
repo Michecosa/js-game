@@ -67,7 +67,7 @@ for (let i=0; i<10; i++) {
         gameOver = true;
         grid.classList.add('d-none')
         
-        setTimeout(() => alert('Game Over! Better luck next time'), 100);
+        // setTimeout(() => alert('Game Over! Better luck next time'), 100);
         
         // Bottone per ricominciare (ricarica la pagina) +contenitore del bottone
         const button = document.createElement('button');
@@ -79,8 +79,14 @@ for (let i=0; i<10; i++) {
         // Ricarica la pagina al click del bottone
         button.onclick = () => location.reload();
         
-        // Carica il bottone nel container
+        
+        // Aggiungi visualizzazione del punteggio fatto (che è uguale al numero di caselle cliccate che non erano bombe)
+        const msg = document.createElement('h3');
+        msg.textContent = `Hai fatto ${clickedCells.length -1} punto/i!` // -1 per evitare di contare la cella con la bomba
+        
+        // Carica il bottone e il messaggio nel container
         const restart = document.getElementById('container');
+        restart.appendChild(msg);
         restart.appendChild(button);
         
       } else {
@@ -89,7 +95,7 @@ for (let i=0; i<10; i++) {
         //Caso vittoria
         const totalSafeCells = 100 - bombs.length;
         if(clickedCells.length === totalSafeCells) {
-          setTimeout(() => alert('You won!'), 100)
+          //setTimeout(() => alert('You won!'), 100)
           
           // Nascondo la griglia per evitare casi di errore
           grid.classList.add('d-none')
