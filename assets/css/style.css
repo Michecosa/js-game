@@ -3,3 +3,7 @@
   height: 2.5rem;
   border: 1px solid lightgray;
 }
+
+.grid-cell:hover {
+  cursor: pointer;
+}
