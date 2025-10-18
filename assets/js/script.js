@@ -86,6 +86,9 @@ for (let i=0; i<10; i++) {
         // Parametro per i punti
         const punti = clickedCells.length - 1; // Esclude la cella cliccata che aveva la bomba
 
+        // Calcola la percentuale di avanzamento
+        const progress = (punti / totalSafeCells) * 100;
+
         // Aggiungi visualizzazione del punteggio fatto (che è uguale al numero di caselle cliccate che non erano bombe)
         const msg = document.createElement('h3');
 
@@ -93,13 +96,13 @@ for (let i=0; i<10; i++) {
           msg.textContent = `Hai cliccato come un vero esploratore… cieco`;
         } else if(punti === 1) {
           msg.textContent = `Un punto. Almeno non è zero. Baby steps.`;
-        } else if (punti <= 10) {
+        } else if (progress <= 15) {
           msg.textContent = `${punti}pt : tecnicamente non è un disastro`;
-        } else if (punti <= 30) {
+        } else if (progress <= 40) {
           msg.textContent = `${punti}pt : hai il tocco giusto: esplosivo ma preciso`;
-        } else if (punti <= 60) {
+        } else if (progress <= 75) {
           msg.textContent = `${punti}pt : le bombe iniziano ad avere paura`;
-        } else if (punti <= 83) {
+        } else if (progress < 100) {
           msg.textContent = `${punti}pt : hai sfiorato la gloria!`;
         }
         
