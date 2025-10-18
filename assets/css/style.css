@@ -1,7 +1,9 @@
 .grid-cell {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 8vw;
+  height: 8vw;
   border: 1px solid lightgray;
+  max-width: 2.5rem;
+  max-height: 2.5rem;
 }
 
 .grid-cell:hover {
