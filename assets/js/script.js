@@ -58,7 +58,7 @@ for (let i=0; i<10; i++) {
     
     const currentNumber = counter;
     
-    cell.onclick = () => {
+    cell.addEventListener('click', () => {
       if (gameOver || clickedCells.includes(currentNumber)) return; 
       
       clickedCells.push(currentNumber);
@@ -81,7 +81,7 @@ for (let i=0; i<10; i++) {
         button.textContent = 'Try again';
         
         // Ricarica la pagina al click del bottone
-        button.onclick = () => location.reload();
+        button.addEventListener('click', () => location.reload());
         
         // Parametro per i punti
         const punti = clickedCells.length - 1; // Esclude la cella cliccata che aveva la bomba
@@ -134,7 +134,7 @@ for (let i=0; i<10; i++) {
           container.appendChild(msg);
         }
       }
-    };
+    });
 
     row.appendChild(cell);
     counter++;
