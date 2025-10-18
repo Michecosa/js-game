@@ -20,7 +20,7 @@ function generateBombs(min, max, totBombs) {
 }
 
 // * Array con i numeri in cui si trovano le bombe
-const bombs = generateBombs(1, 100, 16);
+const bombs = generateBombs(1, 100, 99);
 console.log(`Le bombe sono qui: ${bombs}`);
 
 // * Se ti piace vincere facile, genera 99 bombe (linea 23) e guarda in console*
@@ -103,7 +103,10 @@ for (let i=0; i<10; i++) {
           // Messaggio da mostrare in pagina
           const msg = document.createElement('div');
           msg.className = 'fw-bold fs-4 text-success';
-          msg.textContent = 'Hai vinto!';
+          msg.innerHTML = `
+            <div class="alert alert-success text-center fw-bold fs-4 rounded-pill shadow-sm" role="alert">
+              🎉 Hai vinto! 🎉
+            </div>`;
 
           // Carica il messaggio nel container
           const container = document.getElementById('container');
