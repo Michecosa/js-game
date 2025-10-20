@@ -22,12 +22,18 @@
   </header>
 
   <main>
-    <div id="welcome" class="my-4 text-center">
-      <h5 class="fw-normal">Choose the difficulty level</h5>
-      <button id="easy" class="btn btn-success m-2 fw-bold">🌸 Easy 🌸</button>
-      <button id="medium" class="btn btn-warning m-2 fw-bold">⚡ Medium ⚡</button>
-      <button id="hard" class="btn btn-danger m-2 fw-bold">💣 Hard 💣</button>
-      <button id="impossible"  class="btn btn-dark m-2 fw-bold">💀 Impossible 💀</button>
+    <div id="welcome" class="my-5 text-center">
+      <div class="card p-4" style="width: 40%;">
+        <div class="card-body">
+          <h5 class="mb-4">Choose your difficulty</h5>
+          <div class="d-grid gap-3">
+            <button id="easy" class="btn btn-success btn-lg rounded-pill fw-bold glow">🌸 Easy</button>
+            <button id="medium" class="btn btn-warning btn-lg rounded-pill fw-bold glow">⚡ Medium</button>
+            <button id="hard" class="btn btn-danger btn-lg rounded-pill fw-bold glow">💣 Hard</button>
+            <button id="impossible" class="btn btn-dark btn-lg rounded-pill fw-bold glow">💀 Impossible</button>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="m-4 d-flex justify-content-center">
       <div id="grid" class="text-center"></div>

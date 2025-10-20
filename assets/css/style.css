@@ -1,3 +1,30 @@
+:root {
+  --outer-space: #252525;
+}
+
+body {
+  color: var(--outer-space);
+}
+
+.glow:hover {
+  box-shadow: 0 0 10px rgba(255,255,255,0.7);
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.065);
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 3rem;
+}
+
+#grid {
+  background-color: white;
+  color: var(--outer-space);
+  padding-inline: 1rem;
+  padding-block: 1rem;
+}
+
 .grid-cell {
   width: 8vw;
   height: 8vw;
@@ -8,4 +35,9 @@
 
 .grid-cell:hover {
   cursor: pointer;
+}
+
+#welcome {
+  display: flex;
+  justify-content: center;
 }
