@@ -1,14 +1,30 @@
-:root {
-  --outer-space: #252525;
-}
-
 body {
-  color: var(--outer-space);
+  color: white;
   background-image: url("/assets/img/background.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed; 
+}
+
+h1 {
+  display: inline-block;
+}
+
+h1, h3 {
+  padding: 0.2em 0.6em;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 1rem;
+
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.05)
+  );
+
+  backdrop-filter: blur(4px);
+
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 .glow:hover {
@@ -18,6 +34,7 @@ body {
 }
 
 .card {
+  color: black;
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 2rem;
@@ -27,7 +44,7 @@ body {
 
 #grid {
   background-color: white;
-  color: var(--outer-space);
+  color: darkgray;
   padding-inline: 1rem;
   padding-block: 1rem;
 }
