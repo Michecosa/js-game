@@ -4,6 +4,11 @@
 
 body {
   color: var(--outer-space);
+  background-image: url("/assets/img/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
 }
 
 .glow:hover {
@@ -13,9 +18,11 @@ body {
 }
 
 .card {
-  background-color: rgba(0, 0, 0, 0.065);
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 3rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
 }
 
 #grid {
