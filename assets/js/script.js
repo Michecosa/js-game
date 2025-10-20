@@ -1,3 +1,13 @@
+/* WELCOME */
+document.getElementById('grid').classList.add('d-none');
+
+
+
+
+
+
+
+
 // Funzione per generare numeri (interi) casuali in un dato range
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1) ) + min;
