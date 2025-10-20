@@ -2,7 +2,12 @@
 document.getElementById('grid').classList.add('d-none');
 
 
+let bombNumber;
 
+const btnEasy = document.getElementById('easy');
+const btnMedium = document.getElementById('medium');
+const btnHard = document.getElementById('hard');
+const btnImpossible = document.getElementById('impossible');
 
 
 
