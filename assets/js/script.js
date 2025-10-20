@@ -10,8 +10,28 @@ const btnHard = document.getElementById('hard');
 const btnImpossible = document.getElementById('impossible');
 
 
+function startGame(bombs) {
+  bombNumber = bombs;
 
+  document.getElementById('welcome').classList.add('d-none');
+  document.getElementById('grid').classList.remove('d-none');
+}
 
+btnEasy.addEventListener('click', function() {
+  startGame(3);
+})
+
+btnMedium.addEventListener('click', function() {
+  startGame(8);
+})
+
+btnHard.addEventListener('click', function() {
+  startGame(16);
+})
+
+btnImpossible.addEventListener('click', function() {
+  startGame(99);
+})
 
 // Funzione per generare numeri (interi) casuali in un dato range
 function getRndInteger(min, max) {
