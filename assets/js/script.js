@@ -138,8 +138,10 @@ function initGame() {
             msg.textContent = `${punti}pt : hai il tocco giusto: esplosivo ma preciso`;
           } else if (progress <= 75) {
             msg.textContent = `${punti}pt : le bombe iniziano ad avere paura`;
-          } else if (progress < 100) {
+          } else if (progress < 99) {
             msg.textContent = `${punti}pt : hai sfiorato la gloria!`;
+          } else if (progress === totalSafeCells - 1) {
+            msg.textContent = `${punti}pt : ti mancava UNA. SOLA. CASELLA.`;
           }
           
           // Carica il bottone e il messaggio nel container
