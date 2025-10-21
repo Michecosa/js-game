@@ -20,6 +20,8 @@ function startGame(bombs) {
   document.getElementById('welcome').classList.add('d-none');
   document.getElementById('grid').classList.remove('d-none');
   
+  bgMusic.play();
+  
   initGame();
 }
 
@@ -61,7 +63,6 @@ function generateBombs(min, max, totBombs) {
 }
 
 function initGame() {
-  bgMusic.play();
   // * Array con i numeri in cui si trovano le bombe
   const bombs = generateBombs(1, 100, bombNumber);
   console.log(`Le bombe sono qui: ${bombs}`);
@@ -116,7 +117,9 @@ function initGame() {
           
           // Caso sconfitta
           gameOver = true;
-          grid.classList.add('d-none')
+          grid.classList.add('d-none');
+          bgMusic.pause();
+          bgMusic.currentTime = 0;
           
           // setTimeout(() => alert('Game Over! Better luck next time'), 100);
           
@@ -128,7 +131,11 @@ function initGame() {
           button.textContent = 'Try again';
           
           // Ricarica la pagina al click del bottone
-          button.addEventListener('click', () => location.reload());
+          button.addEventListener('click', () => {
+            bgMusic.pause();
+            bgMusic.currentTime = 0;
+            location.reload();
+          });
           
           // Parametro per i punti
           const punti = clickedCells.length - 1; // Esclude la cella cliccata che aveva la bomba
