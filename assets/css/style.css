@@ -1,6 +1,6 @@
 body {
   color: white;
-  background-image: url("/js-game/assets/img/background.png");
+  background-image: url("https://michecosa.github.io/js-game/assets/img/background.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
