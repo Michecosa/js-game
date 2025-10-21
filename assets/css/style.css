@@ -32,7 +32,7 @@ h1, h3 {
   background-color: rgba(255, 255, 255, 0.685);
 }
 
-.card, h3, h1 {
+.card, h3, h1, #grid {
   font-family: 'Inter';
   padding-inline: 2rem;
   padding-block: 0.8rem;
@@ -45,8 +45,6 @@ h1, h3 {
 }
 
 #grid {
-  background-color: rgba(255, 255, 255, 0.877);
-  color: darkgray;
   padding-inline: 1rem;
   padding-block: 1rem;
 }
@@ -54,7 +52,7 @@ h1, h3 {
 .grid-cell {
   width: 8vw;
   height: 8vw;
-  border: 1px solid lightgray;
+  border: 1px solid rgba(255, 255, 255, 0.567);
   max-width: 2.5rem;
   max-height: 2.5rem;
 }
