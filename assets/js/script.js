@@ -1,3 +1,7 @@
+// Musica di background
+const bgMusic = new Audio('assets/Pufino.mp3');
+bgMusic.loop = true;
+
 /* WELCOME */
 document.getElementById('grid').classList.add('d-none');
 
@@ -12,10 +16,10 @@ const btnImpossible = document.getElementById('impossible');
 
 function startGame(bombs) {
   bombNumber = bombs;
-
+  
   document.getElementById('welcome').classList.add('d-none');
   document.getElementById('grid').classList.remove('d-none');
-
+  
   initGame();
 }
 
@@ -42,25 +46,26 @@ function getRndInteger(min, max) {
 
 function generateBombs(min, max, totBombs) {
   const bombs = [];
-
+  
   for (let i = 0; i < totBombs; i++) {
     let newBomb = getRndInteger(min, max);
-
+    
     if (bombs.includes(newBomb)) {
       i--;
     } else {
       bombs.push(newBomb);
     }
   }
-
+  
   return bombs;
 }
 
 function initGame() {
+  bgMusic.play();
   // * Array con i numeri in cui si trovano le bombe
   const bombs = generateBombs(1, 100, bombNumber);
   console.log(`Le bombe sono qui: ${bombs}`);
-
+  
   const missingNumbers = [];
   for (let i = 1; i <= 100; i++) {
     if (!bombs.includes(i)) {
