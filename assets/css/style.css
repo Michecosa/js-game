@@ -8,6 +8,7 @@ body {
 
   max-width: 1200px;
   margin: 0 auto;
+  font-family: 'Inter';
 }
 
 h1 {
@@ -21,7 +22,6 @@ h1, h3 {
   font-weight: bolder;
 }
 
-#welcome > .glow,
 .card-body .glow:hover {
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.836);
   transform: scale(1.05);
@@ -32,7 +32,10 @@ h1, h3 {
   background-color: rgba(255, 255, 255, 0.685);
 }
 
-.card {
+.card, h3, h1 {
+  font-family: 'Inter';
+  padding-inline: 2rem;
+  padding-block: 0.8rem;
   color: black;
   background-color: rgba(255, 255, 255, 0.1);
   border: 0;
@@ -42,7 +45,7 @@ h1, h3 {
 }
 
 #grid {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.877);
   color: darkgray;
   padding-inline: 1rem;
   padding-block: 1rem;
@@ -64,4 +67,9 @@ h1, h3 {
   font-family: 'Inter';
   display: flex;
   justify-content: center;
+}
+
+.victory {
+  font-size: 4rem;
+  margin-top: 10rem;
 }

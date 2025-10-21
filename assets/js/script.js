@@ -161,14 +161,20 @@ function initGame() {
 
             // Messaggio da mostrare in pagina
             const msg = document.createElement('div');
-            msg.className = 'fw-bold fs-4 text-success';
+            msg.className = `
+              fw-bold text-black
+            `;
             msg.innerHTML = `
-              <div class="alert alert-success text-center fw-bold fs-4 rounded-pill shadow-sm" role="alert">
-                🎉 Hai vinto! 🎉
-              </div>`;
+              <h3 class="victory">
+                <i class="ph ph-confetti"></i>
+                Hai vinto!
+                <i class="ph ph-confetti"></i>
+              </h3>
+            `;
 
             // Carica il messaggio nel container
             const container = document.getElementById('container');
+            document.querySelector('header').classList.add('d-none')
             container.appendChild(msg);
           }
         }
