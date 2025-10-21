@@ -99,6 +99,12 @@ function initGame() {
         
         clickedCells.push(currentNumber);
         
+        // Aggiorna il punteggio
+        const scoreElement = document.getElementById('score');
+        if (scoreElement) {
+          scoreElement.textContent = clickedCells.length;
+        }
+        
         if (bombs.includes(currentNumber)) {
           cell.classList.add('bg-danger', 'text-white', 'fw-bold', 'rounded', 'shadow', 'border');
           cell.innerHTML = '<i class="bi bi-emoji-tear"></i>';
