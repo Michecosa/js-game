@@ -11,6 +11,7 @@
 /* Smartphone (schermi piccoli) */
 @media (max-width: 768px) {
   .grid-cell {
+    font-size: 1.1rem;
     width: 9vw;
     height: 9vw;
     max-width: 4rem;
