@@ -5,14 +5,17 @@ bgMusic.loop = true;
 /* WELCOME */
 document.getElementById('grid').classList.add('d-none');
 
-
 let bombNumber;
 
-const btnEasy = document.getElementById('easy');
-const btnMedium = document.getElementById('medium');
-const btnHard = document.getElementById('hard');
-const btnImpossible = document.getElementById('impossible');
+// Seleziona tutti i bottoni di difficoltà e aggiungi l'event listener
+const difficultyButtons = document.querySelectorAll('#welcome button');
 
+difficultyButtons.forEach(button => {
+  button.addEventListener('click', function() {
+    const bombs = Number(this.getAttribute('numero_bombe'));
+    startGame(bombs);
+  });
+});
 
 function startGame(bombs) {
   bombNumber = bombs;
@@ -24,22 +27,6 @@ function startGame(bombs) {
   
   initGame();
 }
-
-btnEasy.addEventListener('click', function() {
-  startGame(3);
-})
-
-btnMedium.addEventListener('click', function() {
-  startGame(8);
-})
-
-btnHard.addEventListener('click', function() {
-  startGame(16);
-})
-
-btnImpossible.addEventListener('click', function() {
-  startGame(99);
-})
 
 // Funzione per generare numeri (interi) casuali in un dato range
 function getRndInteger(min, max) {
@@ -74,8 +61,6 @@ function initGame() {
     }
   }
   console.log("Numeri salvi:", missingNumbers);
-
-
 
   const grid = document.getElementById('grid');
   let counter = 1;
