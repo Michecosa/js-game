@@ -1,0 +1,29 @@
+/* Tablet (schermi medi) */
+@media (max-width: 1024px) {
+  .grid-cell {
+    width: 9vw;
+    height: 9vw;
+    max-width: 3.5rem;
+    max-height: 3.5rem;
+  }
+}
+
+/* Smartphone (schermi piccoli) */
+@media (max-width: 768px) {
+  .grid-cell {
+    width: 9vw;
+    height: 9vw;
+    max-width: 4rem;
+    max-height: 4rem;
+  }
+}
+
+/* Smartphone molto piccoli */
+@media (max-width: 480px) {
+  .grid-cell {
+    width: 9vw;
+    height: 9vw;
+    max-width: none;
+    max-height: none;
+  }
+}
